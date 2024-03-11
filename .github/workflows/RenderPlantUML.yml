@@ -1,0 +1,72 @@
+name: Render PlantUML diagrams
+ 
+on:
+  push:
+    paths:
+    - '**/Material/imgsrc/**/*.puml'
+    branches-ignore:
+    - main**
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y graphviz
+          wget -O plantuml.jar "https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar" 
+ 
+      - name: Render and Move PNG files
+        run: |
+          # Find all unique directories containing *.puml files under any /imgsrc/ folder
+          directories=$(find . -path "*/imgsrc/*/*.puml" -exec dirname {} \; | sort -u)
+          for dir in $directories; do
+            # Generate the corresponding out directory path
+            out_dir=ImplementationGuide/images/diagrams
+            mkdir -p $out_dir
+ 
+            # Render PNGs from PUMLs
+            find $dir -name "*.puml" -exec java -jar plantuml.jar -tpng {} \;
+ 
+            # Move PNGs to out directory
+            find $dir -name "*.png" -exec mv {} $out_dir \;
+          done
+      
+      # Remove plantUML jar 
+      - name: remove plantuml file
+        run: |
+          rm -f plantuml.jar
+
+      # # add and commit the new generated files
+      #- name: Create Pull Request
+      #  uses: peter-evans/create-pull-request@v5
+      #  with:
+      #    branch: auto/images-generation
+      #    commit-message: Generated Images from source Code by GitHub Action
+      #    title: Generated Images from GitHub Action
+      #    assignees: ${{ github.actor }}
+      #    reviewers: ${{ github.actor }}
+      #    delete-branch: true
+      #    labels: automated pr
+
+      #- name: Commit and push
+      #  run: |
+      #    git config --local user.email "action@github.com"
+      #    git config --local user.name "GitHub Action"
+      #    git add -A
+      #    git commit -m "Add rendered PlantUML to PNG diagrams" || exit 0
+      #    git push
+
+      - name: Commit rendered files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_user_name: GitHub Actions Bot
+          commit_user_email: ActionBot@github.com
+          commit_message: auto-generated diagrams by GitHub Action after source code change
