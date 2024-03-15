@@ -2,3 +2,5 @@ scripts/downloaded_validation_script.sh
 scripts/validation_script-config.yaml
 validation_results/**
 fhirpkg.lock.json
+.vscode/keybindings.json
+.vscode/tasks.json
