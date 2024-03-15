@@ -1,0 +1,10 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "GEM_ERP_CS_ErrorSuffix",
+  "id": "gem-erp-cs-error-suffix",
+  "title": "Error Code Suffix",
+  "description": "This code system contains the Suffix component of the error codes returned by the E-Rezept-Fachdienst",
+  "url": "https://gematik.de/fhir/erp-ec/CodeSystem/gem-erp-cs-error-suffix"
+}

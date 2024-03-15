@@ -1,0 +1,10 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "GEM_ERP_CS_SubErrorComponent",
+  "id": "gem-erp-cs-sub-error-component",
+  "title": "Error Code Sub Component",
+  "description": "This code system contains the Rule component of the error codes returned by the E-Rezept-Fachdienst",
+  "url": "https://gematik.de/fhir/erp-ec/CodeSystem/gem-erp-cs-sub-error-component"
+}
