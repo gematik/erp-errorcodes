@@ -1,43 +1,83 @@
-<img align="right" width="250" height="47" src="/Material/images/Gematik_Logo_Flag.svg"/> <br/> 
+<img align="right" width="200" height="37" src="Gematik_Logo_Flag.png"/> <br/>
+  
+# E-Rezept-ErrorCodes FHIR-Profiles
+
+ The error codes returned by the E-Rezept Fachdienst
+ 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+       <ul>
+        <li><a href="#release-notes">Release Notes</a></li>
+      </ul>     
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
 
-# About
-This template standardizes the development of fhir resources with .fsh resources. It should reduce time for setup and ease the development process.
+## About The Project  
+This Repo contains the fsh files to the published E-Rezept ErrorCodes files on <https://simplifier.net/erezept-errorcodes> and a script to validate them.
+ 
+### Release Notes
+See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newest) releases.
+  
+### Prerequisites
+Clone this project to your local machine.
 
-The following features are provided:
+ 
+## Installation
+To set up a development environment with support for FHIR profile compilation and validation:
 
-* Best practices for modeling fsh files [see /Resources/input/fsh folder](./Resources/input/fsh).
-* Scripted creation and validation of fsh files and the generated fhir resources using a Hapi validator. See [usage page](./USAGE.md).
-* Sorting of validation results by severity in subfolders.
-* Validation of committed fsh files via github-action with different validators (hapi, simplifier).
-# Installation
+1. Ensure you have [Docker](https://www.docker.com/products/docker-desktop) installed on your machine.
+2. Clone the repository and open it in [Visual Studio Code](https://code.visualstudio.com/).
+3. When prompted, reopen the project in a container. This will build the Docker container based on the provided `Dockerfile`.
+4. The container includes:
+   - [Firely Terminal](https://fire.ly/products/firely-terminal/) for FHIR operations.
+   - [SUSHI](https://fshschool.org/docs/sushi/) for compiling FHIR Shorthand (FSH) files.
+   - [HAPI FHIR Validator](https://github.com/hapifhir/hapi-fhir/releases) for validating FHIR profiles.
+5. The [`codfsh` VS Code extension](https://marketplace.visualstudio.com/items?itemName=gematikde.codfsh) is also installed in the container for an enhanced FHIR profile development experience.
+6. Once the container is built and running, you can use the integrated terminal in VS Code to run SUSHI and the HAPI FHIR Validator.
 
-Here you can find the [installation instructions](INSTALL.md)
+Note: The `codfsh` extension settings are pre-configured in the [`.devcontainer/devcontainer.json`](https://code.visualstudio.com/docs/devcontainers/containers) file to use the correct paths for the HAPI Validator and its configuration.
+ 
+## Contributing
+If you want to contribute, please check our [CONTRIBUTING.md](./CONTRIBUTING.md).
+ 
+## License
+ 
+Copyright 2024 gematik GmbH
+ 
+Licensed under the **Apache License, Version 2.0** (the "License"); you may not use this file except in compliance with the License.
+ 
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
+ ## Usage <a name = "usage"></a>
 
-# Setup
-You can browse through the [best practice files](./Resources/input/fsh) for some examples. Before you start specifying your own artifacts you have to
-* configure [sushi-config.yaml](./Resources/sushi-config.yaml) with the dependencies that your project needs. These will be placed in the ~/.fhir/packages directory
-* Set the current year in the LICENSE file (bottom of the page) AND the Readme_template.md
+### Installing FHIR tools on your local machine
+To set up a development environment with support for FHIR profile compilation and validation:
 
-## Remove template files
-Before you can start working within your project you need to delete the best-practise files. Feel free to review them before deletion. You can either run [setup.sh](./scripts/setup.sh)
+1. Ensure you have [Docker](https://www.docker.com/products/docker-desktop) installed on your machine.
+2. Clone the repository and open it in [Visual Studio Code](https://code.visualstudio.com/).
+3. When prompted, reopen the project in a container. This will build the Docker container based on the provided `Dockerfile`.
+4. The container includes:
+   - [Firely Terminal](https://fire.ly/products/firely-terminal/) for FHIR operations.
+   - [SUSHI](https://fshschool.org/docs/sushi/) for compiling FHIR Shorthand (FSH) files.
+   - [HAPI FHIR Validator](https://github.com/hapifhir/hapi-fhir/releases) for validating FHIR profiles.
+5. The [`codfsh` VS Code extension](https://marketplace.visualstudio.com/items?itemName=gematikde.codfsh) is also installed in the container for an enhanced FHIR profile development experience.
+6. Once the container is built and running, you can use the integrated terminal in VS Code to run SUSHI and the HAPI FHIR Validator.
 
-```bash
-chmod u+x ./scripts/setup.sh && ./scripts/setup.sh
-```
-or you can execute these steps manually:
-* delete all files in [./Resources/input/fsh](./Resources/input/fsh)
-* delete all files in [./Resources/fsh-generated/resources](./Resources/fsh-generated/resources)
-* delete [downloaded_validation_script.sh](./scripts/downloaded_validation_script.sh)
-* delete [install_fhir_tools.sh](./scripts/install_fhir_tools.sh) when you have already installed the FHIR Tools by using this script. Otherwise do not delete now.
-* delete [this readme file](./README.md) and rename Readme_template.md with README.md
-
-Finally you will need to
-* Create or re-use the OSPO conform README which can be found in this repository [PROJECT_README.md](/PROJECT_README.md) too.
-* populate the new/renamed README.md with information for your repository.
-
-# Usage <a name = "usage"></a>
-Information about using the preconfigured devontainer including sushi, hapi validator and the codfsh-Extension can be found in [usage page](./USAGE.md).
+Note: The `codfsh` extension settings are pre-configured in the [`.devcontainer/devcontainer.json`](https://code.visualstudio.com/docs/devcontainers/containers) file to use the correct paths for the HAPI Validator and its configuration.
 
 # Help
 

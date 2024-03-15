@@ -1,6 +1,6 @@
 <img align="right" width="250" height="47" src="/Material/images/Gematik_Logo_Flag.svg"/> <br/> 
 
-# < PROJECT NAME >
+# E-Rezept-ErrorCodes
 
 <details>
   <summary>Table of Contents</summary>
@@ -18,7 +18,7 @@
 
 ## About The Project
 
-For full information and details, see [Simplifier Project Page for <PROJECT NAME>](https://simplifier.net/<ProjectNameLink>)
+For full information and details, see [Simplifier Project Page for E-Rezept-ErrorCodes](https://simplifier.net/erezept-errorcodes)
 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.

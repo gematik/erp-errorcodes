@@ -1,0 +1,8 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "GEM_ERP_CS_ErrorComponent",
+  "id": "GEM-ERP-CS-ErrorComponent",
+  "url": "https://gematik.de/fhir/erp-ec/CodeSystem/GEM-ERP-CS-ErrorComponent"
+}
