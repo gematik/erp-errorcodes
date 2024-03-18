@@ -1,0 +1,10 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "GEM_ERP_CS_ErrorCode",
+  "id": "gem-erp-cs-error-code",
+  "title": "GEM ERP CS Error Code",
+  "description": "This code system contains the complete error codes returned by the E-Rezept-Fachdienst",
+  "url": "https://gematik.de/fhir/erp-ec/CodeSystem/gem-erp-cs-error-code"
+}

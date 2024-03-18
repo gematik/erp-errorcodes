@@ -7,3 +7,4 @@ hapi:
     locale: de-DE
     tx: "n/a"
     debug: true
+    proxy: 192.168.110.10:3128
