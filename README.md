@@ -30,6 +30,8 @@ Issue-Type.ErrorComponent.SubErrorComponent.ErrorSuffix
 An example could be: Value.IKNR.Invalid.0001
 
 More details can be found in the [API Documentation](https://github.com/gematik/api-erp)
+
+A short slide deck can also be found [here](https://gematik.github.io/erp-errorcodes/Slides/E-Rezept-Fehlercodes-Konzept.html)
  
 ### Release Notes
 See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newest) releases.
