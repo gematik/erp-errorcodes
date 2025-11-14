@@ -1,4 +1,4 @@
-<img align="right" width="200" height="37" src="Gematik_Logo_Flag.png"/> <br/>
+<img align="right" width="200" height="37" src="Material/images/Gematik_Logo_Flag_With_Background.png"/> <br/>
   
 # E-Rezept-ErrorCodes FHIR-Profiles
 
@@ -14,6 +14,7 @@
       </ul>     
     </li>    
     <li><a href="#license">License</a></li>
+    <li><a href="#Additional Notes and Disclaimer from gematik GmbH">Additional Notes and Disclaimer from gematik GmbH</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -38,11 +39,15 @@ See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newe
   
 ## License
  
-Copyright 2024 gematik GmbH
+Copyright 2025 gematik GmbH
  
 Licensed under the **Apache License, Version 2.0** (the "License"); you may not use this file except in compliance with the License.
  
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
+
+## Additional Notes and Disclaimer from gematik GmbH
+See [License](./LICENSE)
+
  ## Usage <a name = "usage"></a>
 
 ### Installing FHIR tools on your local machine
